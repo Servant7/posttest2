@@ -1,0 +1,12 @@
+Angka sesuai gambar!!
+1. Tampilan menu daftar
+2. Tampilan menu login
+3. Tampilan ketika registrasi berhasil, disini saya memasuki 2 data, yaitu Pedri dan Gavi
+4. Dapat dilihat pada localstorage terdapat array berupa username dan password untuk form register ini
+5. Mencoba untuk memasukkan username/password yang salah dan tentu saja gagal
+6. Memasukkan username dan password yang benar sehingga login berhasil, halaman akan otomatis masuk ke beranda
+7. Pada tampilan menu beranda, terdapat kalimat sapaan kepada user, sebagai contoh "Selamat datang Pedri" Pedri sendiri adalah nama user yang telah kita buat tadi, ini juga berlaku untuk menu navigasi lain seperti Daftar dan Profil
+8. Pada menu Profil belum ada isinya dikarenakan kita belum mengisi data pada menu Daftar tersebut
+9. Kemudian kita beralih ke menu Daftar untuk mengisi formnya
+10. Setelah selesai mengisi data dan mengeklik tombol Simpan, data tersebut akan ditampilkan pada menu Profil
+11. Kita juga bisa logout atau keluar dari halaman utama menuju halaman Login

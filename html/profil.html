@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FC Barcelona</title>
+	<link rel="stylesheet" type="text/css" href="../css/profil.css">
+</head>
+<body>
+	<header>
+		<div class="barca">
+			<img src="../gambar/barca.png" height="80px">
+			<div class="nav">
+			<span><a href="beranda.html">La Masia</a></span>
+			<span><a href="saran.html">Daftar</a></span>
+			<span><a href="profil.html">Profil</a></span>
+			<span><a href="login.html">Logout</a></span>
+			<span class="unduh">Selamat datang <span id="username"></span></span>
+			</div>
+		</div>
+	</header>
+
+	<content>
+		<h1 class="judul_utama">Més que un club</h1>
+		<div class="materi_utama">
+			  <h2 align="center">Hasil data kamu</h2><br><br>
+			  <div class="isi_materi">
+			  <table border="0" class="centered-table">
+			  	<tr>
+			  		<td>Nama</td>
+			  		<td></td>
+			  		<td>:</td>
+			  		<td></td>
+			  		<td><span id="profilNama"></span></td>
+			  	</tr>
+			  	<tr>
+			  		<td>Umur</td>
+			  		<td></td>
+			  		<td>:</td>
+			  		<td></td>
+			  		<td><span id="profilUmur"></span></td>
+			  	</tr>
+			  	<tr>
+			  		<td>Alamat</td>
+			  		<td></td>
+			  		<td>:</td>
+			  		<td></td>
+			  		<td><span id="profilAlamat"></span></td>
+			  	</tr>
+			  	<tr>
+			  		<td>Posisi yang dikuasai</td>
+			  		<td></td>
+			  		<td>:</td>
+			  		<td></td>
+			  		<td><span id="profilHobi"></span></td>
+			  	</tr>
+			  	<tr>
+			  		<td>Jenis Kelamin</td>
+			  		<td></td>
+			  		<td>:</td>
+			  		<td></td>
+			  		<td><span id="profilJenisKelamin"></span></td>
+			  	</tr>
+			  	<tr>
+			  		<td>Pekerjaan</td>
+			  		<td></td>
+			  		<td>:</td>
+			  		<td></td>
+			  		<td><span id="profilPekerjaan"></span></td>
+			  	</tr>
+			  </table>
+			</div>
+		</div>
+	</content>
+
+	<footer>
+		<h1>Sosial media kami</h1>
+		<a href="http://www.facebook.com/fcbarcelona" class="image-link"><img src="../gambar/facebook.png" height="25px"></a>
+		<a href="http://twitter.com/FCBarcelona" class="image-link"><img src="../gambar/twitter.png" height="25px"></a>
+		<a href="https://www.youtube.com/@FCBarcelona" class="image-link"><img src="../gambar/youtube.png" height="25px"></a>
+		<a href="http://www.instagram.com/fcbarcelona" class="image-link"><img src="../gambar/instagram.png" height="25px"></a>
+		<a href="https://www.tiktok.com/@fcbarcelona " class="image-link"><img src="../gambar/tiktok.png" height="25px"></a>
+	</footer>
+</body>
+  <script>
+    // Mendapatkan username dari localStorage
+    let username = localStorage.getItem('username');
+    // Menambahkan username ke dalam elemen span pada halaman HTML
+    document.getElementById('username').textContent = username;
+    // Mengambil data dari local storage
+    var dataArray = JSON.parse(localStorage.getItem("dataArray"));
+    var data = dataArray[dataArray.length - 1];
+
+    // Menampilkan data di profil
+    document.getElementById("profilNama").innerHTML = data.nama;
+    document.getElementById("profilUmur").innerHTML = data.umur;
+    document.getElementById("profilAlamat").innerHTML = data.alamat;
+    document.getElementById("profilHobi").innerHTML = data.hobi.join(", ");
+    document.getElementById("profilJenisKelamin").innerHTML = data.jenisKelamin;
+    document.getElementById("profilPekerjaan").innerHTML = data.pekerjaan;
+  </script>
+</html>

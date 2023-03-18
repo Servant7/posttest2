@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FC Barcelona</title>
+	<link rel="stylesheet" type="text/css" href="../css/login.css">
+</head>
+<body>
+	<header>
+		<div class="barca">
+			<span class="logo"><img src="../gambar/barca.png" height="80px"></span><span class="namatim">FC Barcelona</span>
+			<div class="nav">
+			<span class="unduh">Selamat datang <span id="username"></span></span>
+			</div>
+		</div>
+	</header>
+
+	<content>
+		<div class="login1">
+			<form id="login-form">
+				<h1 style="text-align: center; padding-top: 40px;">Login</h1><br><br>
+				<table border="0">
+					<tr>
+						<td><label for="username">Username :</label></td> 
+						<tr></tr>
+						<td><input type="text" id="username" name="username"></td>
+					</tr>
+					<tr>
+						<td><label for="password">Password :</label></td>
+						<tr></tr>
+						<td><input type="password" id="password" name="password"></td>
+					</tr>
+				</table><br>
+				<p id="py" align="left">Belum punya akun? <a href="daftar.html">Daftar</a></p>
+	        <br><br>
+	        <button type="submit" id="login">Login</button>
+	    	</form>
+	    </div>
+	</content>
+
+	<footer>
+		<h1>Sosial media kami</h1>
+		<a href="http://www.facebook.com/fcbarcelona" class="image-link"><img src="../gambar/facebook.png" height="25px"></a>
+		<a href="http://twitter.com/FCBarcelona" class="image-link"><img src="../gambar/twitter.png" height="25px"></a>
+		<a href="https://www.youtube.com/@FCBarcelona" class="image-link"><img src="../gambar/youtube.png" height="25px"></a>
+		<a href="http://www.instagram.com/fcbarcelona" class="image-link"><img src="../gambar/instagram.png" height="25px"></a>
+		<a href="https://www.tiktok.com/@fcbarcelona " class="image-link"><img src="../gambar/tiktok.png" height="25px"></a>
+	</footer>
+    <script>
+      const loginForm = document.getElementById('login-form');
+      loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const username = event.target.elements.username.value;
+        const password = event.target.elements.password.value;
+        const users = JSON.parse(localStorage.getItem('users') || '[]');
+        const user = users.find((user) => user.username === username && user.password === password);
+        if (user) {
+          localStorage.setItem('username', username);
+          alert('Login successful!');
+          window.location.href = 'beranda.html';
+        } else {
+          alert('Invalid username or password!');
+        }
+        event.target.reset();
+      });
+    </script>
+</body>
+</html>

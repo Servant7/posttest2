@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FC Barcelona</title>
+	<link rel="stylesheet" type="text/css" href="../css/saran.css">
+</head>
+<body>
+	<header>
+		<div class="barca">
+			<img src="../gambar/barca.png" height="80px">
+			<div class="nav">
+			<span><a href="beranda.html">La Masia</a></span>
+			<span><a href="saran.html">Daftar</a></span>
+			<span><a href="profil.html">Profil</a></span>
+			<span><a href="login.html">Logout</a></span>
+			<span class="unduh">Selamat datang <span id="username"></span></span>
+			</div>
+		</div>
+	</header>
+
+	<content>
+		<h1 class="judul_utama">Més que un club</h1>
+		<div class="materi_utama">
+		  <h2 align="center">Masukkan data kamu</h2><br><br>
+			<form>
+			    <label for="nama">Nama :</label>
+			    <input type="text" id="nama" name="nama"><br>
+
+			    <label for="umur">Umur :</label>
+			    <input type="number" id="umur" name="umur"><br><br>
+
+			    <label for="alamat">Alamat :</label>
+			    <textarea id="alamat" name="alamat"></textarea><br>
+			    
+				<label for="hobi">Posisi yang dikuasai :</label>
+				<div class="hobi">
+				  <input type="checkbox" id="penyerang" name="hobi" value="penyerang">
+				  <label for="penyerang">Penyerang</label>
+
+				  <input type="checkbox" id="sayap" name="hobi" value="sayap">
+				  <label for="sayap">Sayap</label>
+
+				  <input type="checkbox" id="gelandang" name="hobi" value="gelandang">
+				  <label for="gelandang">Gelandang</label>
+
+				  <input type="checkbox" id="bertahan" name="hobi" value="bertahan">
+				  <label for="bertahan">Pemain Bertahan</label>
+
+				  <input type="checkbox" id="kiper" name="hobi" value="kiper">
+				  <label for="kiper">Kiper</label>
+				</div>
+
+				<label for="jeniskelamin">Jenis Kelamin :</label>
+				<div class="jeniskelamin">
+				  <input type="radio" id="laki-laki" name="jeniskelamin" value="Laki-laki">
+				  <label for="laki-laki">Laki-laki</label>
+				  <input type="radio" id="perempuan" name="jeniskelamin" value="Perempuan">
+				  <label for="perempuan">Perempuan</label>
+				</div>
+
+			    <label for="pekerjaan">Pekerjaan :</label>
+			    <select id="pekerjaan" name="pekerjaan">
+			      <option value="Pelajar">Pelajar</option>
+			      <option value="Mahasiswa">Mahasiswa</option>
+			      <option value="PNS">PNS</option>
+			      <option value="Swasta">Swasta</option>
+			      <option value="Wiraswasta">Wiraswasta</option>
+			    </select><br><br>
+
+			    <button type="button" onclick="simpanData()" id="button">Simpan</button>
+			  </form>
+		</div>
+	</content>
+
+	<footer>
+		<h1>Sosial media kami</h1>
+		<a href="http://www.facebook.com/fcbarcelona" class="image-link"><img src="../gambar/facebook.png" height="25px"></a>
+		<a href="http://twitter.com/FCBarcelona" class="image-link"><img src="../gambar/twitter.png" height="25px"></a>
+		<a href="https://www.youtube.com/@FCBarcelona" class="image-link"><img src="../gambar/youtube.png" height="25px"></a>
+		<a href="http://www.instagram.com/fcbarcelona" class="image-link"><img src="../gambar/instagram.png" height="25px"></a>
+		<a href="https://www.tiktok.com/@fcbarcelona " class="image-link"><img src="../gambar/tiktok.png" height="25px"></a>
+	</footer>
+</body>
+<script>
+    function simpanData() {
+      // Mengambil nilai input dari form
+      alert("Data berhasil dikirimkan!");
+      var nama = document.getElementById("nama").value;
+      var umur = document.getElementById("umur").value;
+      var alamat = document.getElementById("alamat").value;
+      var hobi = [];
+      var checkboxes = document.getElementsByName("hobi");
+
+      // Memeriksa checkbox mana yang di-check
+      for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+          hobi.push(checkboxes[i].value);
+        }
+      }
+
+      // Mengambil nilai input dari radiobutton
+      var jenisKelamin = document.querySelector('input[name="jeniskelamin"]:checked').value;
+      var pekerjaan = document.getElementById("pekerjaan").value;
+      // Membuat objek dengan data yang diambil dari form
+      var data = {
+        nama: nama,
+        umur: umur,
+        alamat: alamat,
+        hobi: hobi,
+        jenisKelamin: jenisKelamin,
+        pekerjaan: pekerjaan
+      };
+
+
+      // Memeriksa apakah data sudah pernah disimpan sebelumnya
+      var dataArray = JSON.parse(localStorage.getItem("dataArray")) || [];
+
+      //
+      // Menambahkan data baru ke dalam array
+      dataArray.push(data);
+
+      // Menyimpan array dengan data baru ke dalam local storage
+      localStorage.setItem("dataArray", JSON.stringify(dataArray));
+
+      // Menampilkan data di profil
+    }
+          // Mendapatkan username dari localStorage
+      let username = localStorage.getItem('username');
+      // Menambahkan username ke dalam elemen span pada halaman HTML
+      document.getElementById('username').textContent = username;
+  </script>
+</html>

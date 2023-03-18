@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FC Barcelona</title>
+	<link rel="stylesheet" type="text/css" href="../css/daftar.css">
+</head>
+<body>
+	<header>
+		<div class="barca">
+			<span class="logo"><img src="../gambar/barca.png" height="80px"></span><span class="namatim">FC Barcelona</span>
+			<div class="nav">
+			<span class="unduh">Selamat datang <span id="username"></span></span>
+			</div>
+		</div>
+	</header>
+	<content>
+		<div class="login">
+			<form id="register-form">
+				<h1 style="text-align: center; padding-top: 40px;">Daftar</h1><br><br>
+				<table border="0">
+					<tr>
+						<td>Username : </td> 
+						<tr></tr>
+						<td><input type="text" id="username"></td>
+					</tr>
+					<tr><tr><tr><tr><tr></tr></tr></tr></tr>
+						<td>Password :</td>
+						<tr></tr>
+						<td><input type="password" id="password"></td>
+					</tr>
+				</table><br>
+				<p id="py" align="left">Sudah punya akun? <a href="login.html">Login</a></p>
+	        <br><br>
+	        <button type="submit" id="daftar">Daftar</button>
+	    	</form>
+
+	    </div>
+	</content>
+
+	<footer>
+		<h1>Sosial media kami</h1>
+		<a href="http://www.facebook.com/fcbarcelona" class="image-link"><img src="../gambar/facebook.png" height="25px"></a>
+		<a href="http://twitter.com/FCBarcelona" class="image-link"><img src="../gambar/twitter.png" height="25px"></a>
+		<a href="https://www.youtube.com/@FCBarcelona" class="image-link"><img src="../gambar/youtube.png" height="25px"></a>
+		<a href="http://www.instagram.com/fcbarcelona" class="image-link"><img src="../gambar/instagram.png" height="25px"></a>
+		<a href="https://www.tiktok.com/@fcbarcelona " class="image-link"><img src="../gambar/tiktok.png" height="25px"></a>
+	</footer>
+    <script>
+      const registerForm = document.getElementById('register-form');
+      registerForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const username = event.target.elements.username.value;
+        const password = event.target.elements.password.value;
+        const users = JSON.parse(localStorage.getItem('users') || '[]');
+        users.push({ username, password });
+        localStorage.setItem('users', JSON.stringify(users));
+        alert('Registration successful!');
+        window.location.href = "login.html"
+        event.target.reset();
+      });
+    </script>
+</body>
+</html>
+
