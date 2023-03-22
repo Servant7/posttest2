@@ -1,6 +1,6 @@
 # posttest2
 Nama : Ali Khatami<br>
-NIM : 080<br>
+NIM : 2109116080<br>
 Kelas : Sistem Informasi (B2)<br>
 
 1. Tampilan menu daftar
