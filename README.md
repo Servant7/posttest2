@@ -1,4 +1,8 @@
 # posttest2
+Nama : Ali Khatami<br>
+NIM : 080<br>
+Kelas : Sistem Informasi (B2)<br>
+
 1. Tampilan menu daftar
 ![1](https://user-images.githubusercontent.com/94286362/226958878-a6e47732-f67e-4346-aaa5-c9c919745216.png)
 
