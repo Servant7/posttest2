@@ -11,7 +11,7 @@ Kelas : Sistem Informasi (B2)<br>
 ![2](https://user-images.githubusercontent.com/94286362/226958898-67eaf996-35cf-422c-bfa2-c7259a6fcdb0.png)
 
 
-3. Tampilan ketika registrasi berhasil, disini saya memasuki 2 data, yaitu Pedri dan Gavi dengan password yang sama pula yaitu 123
+3. Tampilan ketika registrasi berhasil, disini saya memasukkan 2 data, yaitu Pedri dan Gavi dengan password yang sama pula yaitu 123
 ![3](https://user-images.githubusercontent.com/94286362/226958914-a70d969d-7f56-4419-8a76-2a2948011a89.PNG)
 
 
