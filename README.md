@@ -43,5 +43,9 @@ Kelas : Sistem Informasi (B2)<br>
 ![10](https://user-images.githubusercontent.com/94286362/226958949-bc186df5-8fea-479c-84ed-0e9214822aae.PNG)
 
 
-11. Terakhir kita juga bisa melakukan logout atau keluar dari halaman utama menuju halaman Login
+11. Data tersebut juga tersimpan pada storage dalam bentuk array tentunya
+![11](https://user-images.githubusercontent.com/94286362/226967219-1da2c149-8c2b-4c38-aff4-bef662c5b304.PNG)
+
+
+12. Terakhir kita juga bisa melakukan logout atau keluar dari halaman utama menuju halaman Login
 ![2](https://user-images.githubusercontent.com/94286362/226958898-67eaf996-35cf-422c-bfa2-c7259a6fcdb0.png)
